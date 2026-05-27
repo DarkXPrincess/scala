@@ -31,7 +31,10 @@ package object Canicas {
   }
   //1.1.4 Calculando las distribuciones requeridas
   def distribucion(m:Int , n:Int , c:Int ): List [ Distr ] = {
-
+    for{
+      d <- mezclarLCanicas(canicasPorFrasco(n,c))
+      if d.map { case (_, canicas) => canicas }.sum == m
+    } yield d
   }
   //1.2 Calculo de posibles agrupaciones crecientes
   def agrupaciones(m: Int ): List [ List [ Int ]] ={

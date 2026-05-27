@@ -1,3 +1,8 @@
+
+
+object pruebas extends App {
+val scriptPath = """src\test\scala\pruebas.sc"""
+/*<script>*/
 //> using scala "2.13.8"
 
 import Canicas._
@@ -152,4 +157,8 @@ val esperadoD5 = List(
 val obtenidoD5 = distribucion(2, 3, 1)
 assert(obtenidoD5 == esperadoD5)
 
+println("Pruebas de funciones implementadas superadas.")
 
+/*</script>*/ /*<generated>*/
+/*</generated>*/
+}
