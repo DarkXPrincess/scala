@@ -37,7 +37,15 @@ package object Canicas {
     } yield d
   }
   //1.2 Calculo de posibles agrupaciones crecientes
-  def agrupaciones(m: Int ): List [ List [ Int ]] ={
-    ???
+  def agrupaciones(m: Int): List[List[Int]] = {
+    val maxN = (1 to m).takeWhile(n => n * (n + 1) / 2 <= m).last
+    for {
+      n     <- (1 to maxN).toList
+      distr <- distribucion(m, n, m)
+      sizes  = distr.map(_._2)
+      if sizes.forall(_ > 0)
+      if sizes == sizes.sorted
+      if sizes == sizes.distinct
+    } yield sizes
   }
-  }
+}

@@ -153,3 +153,25 @@ val obtenidoD5 = distribucion(2, 3, 1)
 assert(obtenidoD5 == esperadoD5)
 
 
+// casos de prueba para agrupacion
+// Caso 1: m=1 → solo un grupo de tamaño 1
+agrupaciones(1)
+// Esperado: List(List(1))
+
+// Caso 2: m=2 → solo un grupo de tamaño 2 (no se puede hacer [1,1] porque son iguales)
+agrupaciones(2)
+// Esperado: List(List(2))
+
+// Caso 3: m=4 → grupo de 4, o grupos de 1 y 3 (2+2 descartado por tamaños iguales)
+agrupaciones(4)
+// Esperado: List(List(4), List(1, 3))
+
+// Caso 4: m=5 → tres opciones
+agrupaciones(5)
+// Esperado: List(List(5), List(1, 4), List(2, 3))
+
+// Caso 5: m=6 → igual al ejemplo del enunciado
+agrupaciones(6)
+// Esperado: List(List(6), List(1, 5), List(2, 4), List(1, 2, 3))
+
+
